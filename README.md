@@ -3,12 +3,11 @@
 
 ### Using the baseline model, replace the model's architecture with each of the variations to conclude which model performs the best.
 
-Install libraries (ensure they are installed):
+### Install libraries (ensure they are installed)
+
 Pip install numpy
 Pip install tensorflow  
 pip install opencv-python
-
 sudo apt-get update
 sudo apt-get install -y libgl1
-
 pip install matplotlib
