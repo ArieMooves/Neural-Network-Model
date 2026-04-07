@@ -149,34 +149,34 @@ if __name__ == "__main__":
     (x_train, y_train), (x_test, y_test) = tf.keras.datasets.cifar10.load_data()
     # Define Architecture
     # BASELINE MODEL
-  model = keras.Sequential([
+    model = keras.Sequential([
 
-    # Block 1
-    layers.Conv2D(32, (3,3), activation="relu", padding="same", input_shape=(32,32,3)),
-    layers.Conv2D(32, (3,3), activation="relu"),
-    layers.MaxPooling2D((2,2)),
-    layers.BatchNormalization(),
-
-
-    # Block 2
-    layers.Conv2D(64, (3,3), activation="relu", padding="same"),
-    layers.Conv2D(64, (3,3), activation="relu"),
-    layers.MaxPooling2D((2,2)),
-    layers.BatchNormalization(),
-
-
-    # Block 3
-    layers.Conv2D(128, (3,3), activation="relu", padding="same"),
-    layers.MaxPooling2D((2,2)),
-    layers.BatchNormalization(),
-
-
-    # Classifier
-    layers.Flatten(),
-    layers.Dense(128, activation="relu"),
-    layers.Dropout(0.5),
-    layers.Dense(10, activation="softmax")  
-  ])
+        # Block 1
+        layers.Conv2D(32, (3,3), activation="relu", padding="same", input_shape=(32,32,3)),
+        layers.Conv2D(32, (3,3), activation="relu"),
+        layers.MaxPooling2D((2,2)),
+        layers.BatchNormalization(),
+    
+    
+        # Block 2
+        layers.Conv2D(64, (3,3), activation="relu", padding="same"),
+        layers.Conv2D(64, (3,3), activation="relu"),
+        layers.MaxPooling2D((2,2)),
+        layers.BatchNormalization(),
+    
+    
+        # Block 3
+        layers.Conv2D(128, (3,3), activation="relu", padding="same"),
+        layers.MaxPooling2D((2,2)),
+        layers.BatchNormalization(),
+    
+    
+        # Classifier
+        layers.Flatten(),
+        layers.Dense(128, activation="relu"),
+        layers.Dropout(0.5),
+        layers.Dense(10, activation="softmax")  
+    ])
 
     # Compile and Train (Crucial for meaningful Grad-CAM)
     model.compile(optimizer='adam',
